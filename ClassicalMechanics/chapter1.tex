@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+\title{Chapter 1}
+\author{Bhargav Annem}
+\date{May 2023}
+
+\begin{document}
+\maketitle
+
+\section{Derivations}
+Let's derive Newton's Second Law for rotational kinematics.
+\begin{equation}
+    \begin{aligned}
+         & F = ma                              \\
+         & F = F_r \hat{r} + F_\phi \hat{\phi} \\
+    \end{aligned}
+\end{equation}
+First, the conversions for rectangular to angular coordinates are as follows:
+\begin{equation}
+    \begin{aligned}
+         & x = r\cos(\phi)          \\
+         & y = r\sin(\phi)          \\
+         & \phi = \tan(\frac{y}{x}) \\
+         & r = \sqrt{x^2+y^2}       \\
+    \end{aligned}
+\end{equation}
+
+Also,
+\begin{equation}
+    \begin{aligned}
+         & \Delta r=\Delta \phi \hat{\phi}                   \\
+         & \Delta r = \dot{\phi} \Delta t \hat{\phi}         \\
+         & \frac{\Delta r}{\Delta t} = \dot{\phi} \hat{\phi} \\
+         & \frac{d\hat{r}}{dt} = \dot{\phi} \hat{\phi}       \\
+    \end{aligned}
+\end{equation}
+
+To prove this last statement more rigorously, let's decompose $\vec{r}$ into Cartesian components.
+
+\[\vec{r} = r\cos(\phi)\hat{x} + r\sin(\phi)\hat{y}\]
+Then,
+\[\frac{d\vec{r}}{dr} = \cos(\phi)\hat{x} + \sin(\phi)\hat{y}\]
+since
+\[\frac{d\vec{r}}{dr} = \cos(\phi)\hat{x} + \sin(\phi)\hat{y}\]
+and
+\[|\frac{d\vec{r}}{dr}| = \sqrt{ \cos(\phi)^2 + \sin(\phi)^2 } = 1 \]
+\[ \hat{r} = \cos(\phi)\hat{x} + \sin(\phi)\hat{y}\]
+
+Similarly, solving for $\frac{d\vec{r}}{d\phi}$ gives us the following:
+
+\[\frac{d\vec{r}}{d\phi} = r(-\sin(\phi)\hat{x} + \cos(\phi)\hat{y})\]
+and
+\[|\frac{d\vec{r}}{d\phi}| = r\sqrt{(-\sin(\phi)^2) + \cos(\phi)^2} = 1\]
+so
+\[\hat{\phi} = -\sin(\phi)\hat{x} + \cos(\phi)\hat{y}\]
+
+Initially, we established that
+\[\vec{r} = \it{r}\hat{r}\]
+Then,
+\begin{equation}
+    \begin{aligned}
+        \vec{v} = \frac{\vec{dr}}{dt} & = \frac{d}{dt}(\it{r}\hat{r})                                                      \\
+                                      & = r\frac{d\hat{r}}{dt} + \hat{r}\dot{r} + \it{\dot{r}}\hat{r}                      \\
+                                      & = r(\frac{-d\phi}{dt}\sin(\phi) + \frac{d\phi}{dt}cos(\phi)) + \it{\dot{r}}\hat{r} \\
+                                      & = r(\frac{d\phi}{dt}(-\sin(\phi) + cos(\phi))) + \it{\dot{r}}\hat{r}               \\
+                                      & = r(\dot{\phi}(-\sin(\phi) + cos(\phi))) + \it{\dot{r}}\hat{r}                     \\
+                                      & = r\dot{\phi}\hat{\phi} + \it{\dot{r}}\hat{r}                                      \\
+    \end{aligned}
+\end{equation}
+
+Then,
+\begin{equation}
+    \begin{aligned}
+        \frac{d^2\vec{r}}{dt^2} = r(\frac{d\dot{\phi}\hat{\phi}}{dt}) + \dot{\phi}\hat{\phi}\dot{r} + \dot{r}\frac{d\hat{r}}{dt} + \hat{r}\ddot{r}                         \\
+        \frac{d^2\vec{r}}{dt^2} = r(\ddot{\phi}\hat{\phi} + \dot{\phi}\frac{d\hat{\phi}}{dt}) + \dot{\phi}\hat{\phi}\dot{r} + \dot{r}\frac{d\hat{r}}{dt} + \hat{r}\ddot{r} \\
+    \end{aligned}
+\end{equation}
+And since,
+\begin{equation}
+    \begin{aligned}
+        \frac{d\hat{\phi}}{dt} & = -\dot{\phi}\cos(\phi)\hat{x} - \dot{\phi}\sin(\phi)\hat{y}   \\
+        \frac{d\hat{\phi}}{dt} & = -\dot{\phi}(\cos(\phi)\hat{x} + \sin(\phi)\hat{y})           \\
+        \frac{d\hat{\phi}}{dt} & = -\dot{\phi}\hat{r}                                           \\
+        \frac{d\hat{r}}{dt}    & = -\dot{\phi}(\sin(\phi)\hat{x} - \dot{\phi}\cos(\phi)\hat{y}) \\
+        \frac{d\hat{r}}{dt}    & = \dot{\phi}\hat{\phi}                                         \\
+    \end{aligned}
+\end{equation}
+We end with,
+\begin{equation}
+    \begin{aligned}
+        \frac{d^2\vec{r}}{dt^2} = r(\ddot{\phi}\hat{\phi} - \dot{\phi}\dot{\phi}\hat{r}) + \dot{\phi}\hat{\phi}\dot{r} + \dot{r}\dot{\phi}\hat{\phi} + \ddot{r}\hat{r} \\
+        \vec{a} = \frac{d^2\vec{r}}{dt^2} = (\ddot{r} - r\dot{\phi}^2\hat{r})\hat{r} + (2r\dot{\phi} + \ddot{\phi})\hat{\phi}                                          \\
+    \end{aligned}
+\end{equation}
+
+From here, we conclude with:
+\begin{equation}
+    \begin{aligned}
+        \boxed{\vec{F} = m\vec{a} = m(\ddot{r} - r\dot{\phi}^2\hat{r})\hat{r} + m(2r\dot{\phi} + \ddot{\phi})\hat{\phi}} \\
+    \end{aligned}
+\end{equation}
+\end{document}
