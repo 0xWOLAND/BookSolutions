@@ -2,6 +2,25 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:}\\%
+}
+
+\newcommand\ASolution{%
+  \stepcounter{solution}%
+  \textbf{Solution \thesolution:}\\%
+}
+\parindent 0in
+\parskip 1em
 
 \title{Chapter 1}
 \author{Bhargav Annem}
@@ -100,6 +119,102 @@ From here, we conclude with:
 \begin{equation}
     \begin{aligned}
         \boxed{\vec{F} = m\vec{a} = m(\ddot{r} - r\dot{\phi}^2\hat{r})\hat{r} + m(2r\dot{\phi} + \ddot{\phi})\hat{\phi}} \\
+    \end{aligned}
+\end{equation}
+
+\section{Problem Solutions}
+\Problem 1.1 Given the two vectors $b = \hat{x} + \hat{y}$ and $c = \hat{x} + \hat{z}$ find $b + c$, $5b + 2c$, $b \cdot c$, and $b \times c$
+
+\TheSolution {
+    \begin{equation}
+        \begin{aligned}
+            b + c      & = 2\hat{x} + \hat{y} + \hat{z}   \\
+            5b + 2c    & = 7\hat{x} + 5\hat{y} + 2\hat{z} \\
+            b \cdot c  & = 1                              \\
+            b \times c & = \begin{cases}
+                               1, 1, 0 \\
+                               1, 0, 1
+                           \end{cases}                   \\
+                       & = <1, 1, -1>                     \\
+                       & = \hat{x} - \hat{y} - \hat{z}
+        \end{aligned}
+    \end{equation}
+}
+
+\Problem 1.3 By applying Pythagoras's theorem (the usual two-dimensional version) twice over, prove that the length $\it{r}$ of a three-dimensional vector $r = (x, y, z)$ statisfies $r^2 = x^2 + y^2 + z^2$
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        h^2 & = x^2 + y^2       \\
+        r^2 & = h^2 + z^2       \\
+        r^2 & = x^2 + y^2 + z^2 \\
+    \end{aligned}
+\end{equation}
+
+\Problem Find the angle between a body diagonal of a cube and any of its face diagonals. [$\it{Hint:}$ Choose a cube with side 1 adn with one corner at $\it{O}$ and the opposite corner at the point (1, 1, 1). Write down teh vector that represents a body diagonal and another that represents a face diagonal, and tehn find teh angle between them as in Problem 1.4].
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        f_{body}                & = <1,1,1>                            \\
+        f_{face}                & = <1,1,0>                            \\
+        f_{body} \cdot f_{face} & = 2 = |f_{body}||f_{face}|\cos(\phi) \\
+        \sqrt3\sqrt2\cos(\phi)  & = 2                                  \\
+        \phi                    & = \arccos(\frac{2}{\sqrt3\sqrt2})
+    \end{aligned}
+\end{equation}
+\begin{center}
+    \boxed{35.26\deg}
+\end{center}
+
+\Problem Prove that the two definitions of the scalar product $r \cdot s$ as $rs\cos(\phi)$ and $\sum r_i s_i$ are equal. One way to do this is to choose your x-axis along the direction of $\boldsymbol{r}$
+
+\TheSolution
+If $r$ lays along $x$, then $\cos(\phi) = 1$ since $\phi = 0$. Since $\sum r_i s_i = \sum r_i \cdot \sum s_i = rs$, the two statements are equivalent. The longer way is to use the law of cosines to expand $\cos(\phi)$ in terms of r and s, which will give you an expression that evaluates to a summation.
+
+\Problem
+In elementary trigonometry, you probably learned the law of cosines for a triangle of sides $a, b, c$ that $c^2 = a^2 + b^2 - 2ab\cos(\phi)$ where $\phi$ is the angle between teh sides $a$ and $b$. Show that the law of cosines is an immediate consequence of the identity $(a + b)^2 = a^2 + b^2 + 2 a \cdot b$.
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        2a \cdot b & = 2ab\cos(\phi) \\
+    \end{aligned}
+\end{equation}
+Since $\phi$ represents the angle between a and b (which is the external angle of the triangle $\pi - \phi$), then $\cos(\phi) \rightarrow -\cos(\phi)$. Let $c = a + b$, then we get $c^2 = a^2 + b^2 - 2ab\cos(\phi)$.
+
+\Problem
+The position of a moving particle is given as a function fo time $t$ to be
+\[r(t) = \hat{x}b\cos(\omega t) + \hat{y}c\sin(\omega t) + \hat{z}v_o t\]
+where $b, c, \text{and } \omega$ are constants. Describe the particle's orbit.
+
+\TheSolution
+The $\hat{z}v_o t$ part will cause the particle to move upwards continuously, but the two trigonometric functions of different amplitudes will create an elliptical orbit.
+
+\Problem
+Let $u$ be an arbitrary fixed unit vector and show that any vector $b$ satisfies
+\[b^2 = (u \cdot b)^2 + (u \times b)^2\]
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        b^2 & = (ub\cos(\phi))^2 + (ub\sin(\phi))^2 \\
+        b^2 & = (ub)^2(\cos(\phi)^2 + \sin(\phi))^2 \\
+        b^2 & = u^2 b^2                             \\
+    \end{aligned}
+\end{equation}
+
+Since $|u| = 1$ because it is a unit vector, we get $b^2 = b^2$.
+
+\Problem
+Show that the definition of the cross product is equivalent to the elementary definition that $r \times s$ is perpendicular to both $r$ and $s$ with magnitude $rs\sin(\phi)$ and direction given by the right-hand rule.
+
+\TheSolution
+Let $\vec{v} = (v_1, v_2, v_3)$ and $\vec{s} = (s_1, s_2, s_3)$, then:
+\begin{equation}
+    \begin{aligned}
+
     \end{aligned}
 \end{equation}
 \end{document}
