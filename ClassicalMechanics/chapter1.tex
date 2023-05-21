@@ -214,7 +214,45 @@ Show that the definition of the cross product is equivalent to the elementary de
 Let $\vec{v} = (v_1, v_2, v_3)$ and $\vec{s} = (s_1, s_2, s_3)$, then:
 \begin{equation}
     \begin{aligned}
-
+        |\vec{v_1}| = \sqrt{v_1^2 + v_2^2 + v_3^2} \\
+        |\vec{s_1}| = \sqrt{s_1^2 + s_2^2 + s_3^2} \\
     \end{aligned}
 \end{equation}
+\begin{equation}
+    \begin{aligned}
+        |(v_1, v_2, v_3) \times (s_1, s_2, s_3)| & = |(v_2 s_3 - v_3 s_2, v_1 s_3 - v_3 s_1, v_1 s_2 - v_2 s_1)|                     \\
+                                                 & = \sqrt{ (v_2 s_3 - v_3 s_2)^2 + (v_1 s_3 - v_3 s_1) ^2 + (v_1 s_2 - v_2 s_1)^2 } \\
+                                                 & = \sqrt{
+            \begin{aligned}
+                (v_2 s_3) ^2    + 2(v_2 v_3 s_2 s_3) + (v_3 s_2) ^2 \\
+                +  (v_1 s_3) ^2 + 2(v_1 v_3 s_1 s_3) + (v_3 s_1) ^2 \\
+                +  (v_1 s_2) ^2 + 2(v_1 v_2 s_1 s_2) + (v_1 s_2) ^2
+            \end{aligned}
+        }                                                                                                                            \\
+                                                 & = \sqrt{
+            \begin{aligned}
+                (v_1^2 + v_2^2 + v_3^2)(s_1^2 + s_2^2 + s_3^2) \\
+                - ((v_1 s_1)^2 + (v_2 s_2)^2 + (v_3 s_3)^2 +   \\
+                2(v_2 v_3 s_2 s_3 + v_1 v_3 s_1 s_3 + v_1 v_2 s_1 s_2))
+            \end{aligned}
+        }
+    \end{aligned}
+\end{equation}
+And since $(a + b + c)^2 = a^2 + b^2 + c^2 + 2(ab + ac + bc)$, we get:
+\begin{equation}
+    \begin{aligned}
+          & \sqrt{(v_1^2 + v_2^2 + v_3^2)(s_1^2 + s_2^2 + s_3^2) - (v_1 s_1 + v_2 s_2 + v_3 s_3)^2} \\
+        = & \sqrt{||\vec{v}||||\vec{s}|| - (\vec{v} \cdot \vec{s})^2}                               \\
+    \end{aligned}
+\end{equation}
+Since $\vec{v} \cdot \vec{s} = ||\vec{v}||||\vec{s}||\cos(\phi)$, we get:
+\begin{equation}
+    \begin{aligned}
+        = & \sqrt{||\vec{v}||^2||\vec{s}||^2 - (\vec{v} \cdot \vec{s}})^2 \\
+        = & \sqrt{||\vec{v}||^2||\vec{s}||^2(1 - \cos^2(\phi)})           \\
+        = & \sqrt{||\vec{v}||^2||\vec{s}||^2(\sin^2(\phi)})               \\
+        = & ||\vec{v}||||\vec{s}||(\sin(\phi))                            \\
+    \end{aligned}
+\end{equation}
+
 \end{document}
