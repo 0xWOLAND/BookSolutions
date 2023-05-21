@@ -6,7 +6,7 @@
 \newcounter{solution}
 
 \newcommand\Problem{%
-    \subsubsection{}~%
+    \subsubsection{}%
 }
 
 \newcommand\TheSolution{%
@@ -121,6 +121,7 @@ From here, we conclude with:
 \end{equation}
 
 \section{Problem Solutions}
+\subsection{1.1-1.3 Space and Time}
 \Problem 1.1 Given the two vectors $b = \hat{x} + \hat{y}$ and $c = \hat{x} + \hat{z}$ find $b + c$, $5b + 2c$, $b \cdot c$, and $b \times c$
 
 \TheSolution {
@@ -183,7 +184,7 @@ In elementary trigonometry, you probably learned the law of cosines for a triang
 Since $\phi$ represents the angle between a and b (which is the external angle of the triangle $\pi - \phi$), then $\cos(\phi) \rightarrow -\cos(\phi)$. Let $c = a + b$, then we get $c^2 = a^2 + b^2 - 2ab\cos(\phi)$.
 
 \Problem
-The position of a moving particle is given as a function fo time $t$ to be
+The position of a moving particle is given as a function of time $t$ to be
 \[r(t) = \hat{x}b\cos(\omega t) + \hat{y}c\sin(\omega t) + \hat{z}v_o t\]
 where $b, c, \text{and } \omega$ are constants. Describe the particle's orbit.
 
@@ -301,5 +302,110 @@ Which depends only on the lengths of $\vec{r} \text{ and } \vec{s}$
     \end{aligned}
 \end{equation}
 
+\subsection{1.4 Netwon's First and Second Laws; Inertial Frames}
+\Problem In case you haven't studied differentia equations before, I shall be introducing the necessary ideas as needed. Here is a simple exercise to get started: Find the general solution of the first-order equation $\frac{df}{dt} = f$ for an unknown function $f(t)$.
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        \frac{df}{dt}     & = f         \\
+        \frac{df}{f}      & = dt        \\
+        \int \frac{df}{f} & = \int dt   \\
+        \ln(f)            & = t + C     \\
+        f                 & = e^{t + C} \\
+        f                 & = e^t e^C
+    \end{aligned}
+\end{equation}
+One arbitrary variable ($e^C$)
+
+\Problem Answer the same questions as in Problem 2.2.1 but for the differential eqation $\frac{df}{dt} = -3f$.
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        \frac{df}{dt}        & = -3f          \\
+        \frac{df}{dt}        & = -3f          \\
+        \int \frac{1}{f}  df & = -3 dt        \\
+        ln(f)                & = -3t + C      \\
+        f                    & = e^{-3t + C}  \\
+        f                    & = e^{-3t}e^{C} \\
+    \end{aligned}
+\end{equation}
+
+\Problem The hallmark of an inertial reference frame is that any object which is subject to zero net force will travel in a straight line at constant speed. To illustrate this, consider the following: I am standing on a level floor at the origin of an inertial frame $\mathcal{S}$ and kick a frictionless puck due north across the floor. (a) Write down the x and y coordinates of the puck as functions of time as seen from my inertial frame. (Use x and y axes pointing east and north respectively.) Now consider two more observers, the first at rest in a frame $\mathcal{S'}$ that travels with cosntant velocity v due east relative to $\mathcal{S}$, the second at rest in frame $\mathcal{S''}$ that travels with constant acceleration due east relative to $\mathcal{S}$. (All three frames coincide at the moment when I kick the puch, and $\mathcal{S''}$ is at rest relative to $\mathcal{S}$ at that same moment.) (b) Find the coordinates x', y' of the puck and describe the puck's path as seen from $\mathcal{S'}$. (c) Do the same for $\mathcal{S''}$. Which of the frames is inertial?
+
+\TheSolution
+(a)
+\begin{equation}
+    \begin{aligned}
+        x(t) & = 0                 \\
+        y(t) & = \frac{1}{2} a t^2
+    \end{aligned}
+\end{equation}
+
+(b)
+\begin{equation}
+    \begin{aligned}
+        x(t) & = -v_{\mathcal{S}}(t) \\
+        y(t) & = \frac{1}{2} a t^2
+    \end{aligned}
+\end{equation}
+
+(c)
+\begin{equation}
+    \begin{aligned}
+        x(t) & = -\frac{1}{2}a_{\mathcal{S}}t^2 \\
+        y(t) & = \frac{1}{2} a t^2
+    \end{aligned}
+\end{equation}
+
+(a) and (b) are inertial frames since they aren't undergoing any acceleration.
+
+\Problem I am standing on the ground (which we shall take to be an inertial frame) beside a perfectly flat horizontal turntable, rotating with constant angular velocity $\omega$. I lean over and shove a frictionless puck so that it slides across the turntable, straight through the center. The puck is subject to zero net force so that it slides across the turntable, straight through the center. The puck is subject to zero net force and, as seen from my inertial frame, travels in a straight line. Describe the puck's path as observed by someone sitting at rest on the turntable.
+
+\TheSolution
+First, as the observer approaches $\pi$, the puck will look like it isn't travelling very far/fast relative to the observer since they are going the the same direction. Once the observer and puck start going in opposite directions, the puck will look like it is travelling away fairly quickly. The puck will appear to be travelling in somewhat of a spiral shape, curving away from the observer.
+
+\subsection{1.5 The Third Law and Conservation of Momentum}
+
+\Problem Go over the steps from Equation (1.25) to (1.29) in the proof of conservation of momentum, but treat the case that N = 3 and write out all of the summations explicity to be sure you understant the various manipulations.
+
+\TheSolution In this case of N = 3, we have 3 particles that exert some forces on each other but operate in the same inertial frame of reference. Since that is the case, $\dot{p} = F$. The force applied on particle 1 is:
+\begin{equation}
+    \begin{aligned}
+        \sum \vec{F}_1 & = \vec{F}_12 + \vec{F}_13 + \vec{F}_{ext} \\
+                       & = \vec{F}_12 + \vec{F}_13 + \vec{F}_{ext}
+    \end{aligned}
+\end{equation}
+
+Accordingly,
+\begin{equation}
+    \begin{aligned}
+        \sum \vec{F}_2 & = \vec{F}_21 + \vec{F}_23 + \vec{F}_{ext} \\
+        \sum \vec{F}_3 & = \vec{F}_31 + \vec{F}_32 + \vec{F}_{ext} \\
+    \end{aligned}
+\end{equation}
+
+The net force exerted on the system is the sum of the forces experienced by each of the particles. Since $\vec{F}_{ab} = -\vec{F}_{ba}$, we get:
+\begin{equation}
+    \begin{aligned}
+        \sum \vec{F}_{sys}  & = \vec{F}_{ext} \\
+        \vec{\dot{p}}_{sys} & = \vec{F}_{ext} \\
+    \end{aligned}
+\end{equation}
+
+If $\vec{F}_{ext} = 0$ (there is no external force), there is no change in momentum so it is conserved.
+
+\Problem
+Conservation laws, such as conservation of momentum, often give a surprising amount of information about the possible outcome of an experiment. Here is perhaps the simplest example: Two objects of masses $m_1$ and $m_2$ are subject to no external forces. Object 1 is traveling with velocity $\textbf{v}$ when it collides with the stationary object 2. The two objects stick together and move off with common velocity $\textbf{v'}$. Use conservation of momentum to find $\textbf{v'}$ in terms of $\textbf{v}, \textit{m}_1, \text{and}, \textit{m}_2$.
+
+\TheSolution Since conservation of momentum applies,
+\begin{equation}
+    \begin{aligned}
+        \sum p_{initial} & = \sum p_{final}          \\
+        m_1 v            & = (m_1 + m_2) v'          \\
+        v'               & = \frac{m_1 v}{m_1 + m_2}
+    \end{aligned}
+\end{equation}
 
 \end{document}
