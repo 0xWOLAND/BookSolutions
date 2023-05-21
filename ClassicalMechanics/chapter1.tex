@@ -1,14 +1,12 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{bm}
 
-\newcounter{problem}
 \newcounter{solution}
 
 \newcommand\Problem{%
-  \stepcounter{problem}%
-  \textbf{\theproblem.}~%
-  \setcounter{solution}{0}%
+    \subsubsection{}~%
 }
 
 \newcommand\TheSolution{%
@@ -152,7 +150,7 @@ From here, we conclude with:
     \end{aligned}
 \end{equation}
 
-\Problem Find the angle between a body diagonal of a cube and any of its face diagonals. [$\it{Hint:}$ Choose a cube with side 1 adn with one corner at $\it{O}$ and the opposite corner at the point (1, 1, 1). Write down teh vector that represents a body diagonal and another that represents a face diagonal, and tehn find teh angle between them as in Problem 1.4].
+\Problem Find the angle between a body diagonal of a cube and any of its face diagonals. [$\it{Hint:}$ Choose a cube with side 1 adn with one corner at $\it{O}$ and the opposite corner at the point (1, 1, 1). Write down the vector that represents a body diagonal and another that represents a face diagonal, and then find the angle between them as in Problem 1.4].
 
 \TheSolution
 \begin{equation}
@@ -174,7 +172,7 @@ From here, we conclude with:
 If $r$ lays along $x$, then $\cos(\phi) = 1$ since $\phi = 0$. Since $\sum r_i s_i = \sum r_i \cdot \sum s_i = rs$, the two statements are equivalent. The longer way is to use the law of cosines to expand $\cos(\phi)$ in terms of r and s, which will give you an expression that evaluates to a summation.
 
 \Problem
-In elementary trigonometry, you probably learned the law of cosines for a triangle of sides $a, b, c$ that $c^2 = a^2 + b^2 - 2ab\cos(\phi)$ where $\phi$ is the angle between teh sides $a$ and $b$. Show that the law of cosines is an immediate consequence of the identity $(a + b)^2 = a^2 + b^2 + 2 a \cdot b$.
+In elementary trigonometry, you probably learned the law of cosines for a triangle of sides $a, b, c$ that $c^2 = a^2 + b^2 - 2ab\cos(\phi)$ where $\phi$ is the angle between the sides $a$ and $b$. Show that the law of cosines is an immediate consequence of the identity $(a + b)^2 = a^2 + b^2 + 2 a \cdot b$.
 
 \TheSolution
 \begin{equation}
@@ -251,8 +249,57 @@ Since $\vec{v} \cdot \vec{s} = ||\vec{v}||||\vec{s}||\cos(\phi)$, we get:
         = & \sqrt{||\vec{v}||^2||\vec{s}||^2 - (\vec{v} \cdot \vec{s}})^2 \\
         = & \sqrt{||\vec{v}||^2||\vec{s}||^2(1 - \cos^2(\phi)})           \\
         = & \sqrt{||\vec{v}||^2||\vec{s}||^2(\sin^2(\phi)})               \\
-        = & ||\vec{v}||||\vec{s}||(\sin(\phi))                            \\
+        = & \boxed{||\vec{v}||||\vec{s}||(\sin(\phi))}                    \\
     \end{aligned}
 \end{equation}
+
+\Problem ($\textbf{a}$) Defining the scalar product $\pmb{r \cdot s}$ by Equation (1.7), $\pmb{r \cdot s} = \sum r_i s_i$, show that Pythagoras's theorem implies that the magnitude of any vector $\textbf{r}$ is $\textit{r} = \sqrt{\pmb{r \cdot r}}$. ($\textbf{b}$) It is clear that the length of a vector does not depend on our choicee of coordinate axes. Thus the result of part (a) guarantees that the scalar product $\pmb{r \cdot r}$, as defined by (1.7), is the same for any choice of orthogonal axes. Use this to prove that $\pmb{r \cdot s}$, as defined by (1.7), is the same for any choice of orthogonal axes. [$\textit{Hint:}$ Consider the length of the vector $\pmb{r + s}$]
+
+\TheSolution
+$(\textbf{a})$ \[\textit{r} = \sqrt{\sum r_i^2} \rightarrow \textit{r}^2 = \sum r_i^2\]
+$(\textbf{b})$ The length of $\vec{r} + \vec{s}$ is  $\sqrt{\sum (r_i + s_i)^2}$
+\begin{equation}
+    \begin{aligned}
+        |\vec{r} + \vec{s}|^2 & = (r_1 + s_1)^2 + (r_2 + s_2)^2 + (r_3 + s_3)^2               \\
+                              & = ||\vec{r}||^2||\vec{s}||^2 + 2(r_1 s_1 + r_2 s_2 + r_3 s_3) \\
+                              & = ||\vec{r}||^2||\vec{s}||^2 + 2(\vec{r} \cdot \vec{s})       \\
+    \end{aligned}
+\end{equation}
+\[\boxed{\vec{r} \cdot \vec{s} = \frac{1}{2}(|\vec{r} + \vec{s}|^2 - ||\vec{r}||^2||\vec{s}||^2)}\]
+Which depends only on the lengths of $\vec{r} \text{ and } \vec{s}$
+
+
+\Problem (a) Prove that the vector product $r \times s$ as defined by (1.9) is distributive; that is, that $r \times (u + v) = (r \times u) + (r \times v)$. (b) Prove the product rule:
+\[ \frac{d}{dt} (r \times s) = r \times \frac{ds}{dt} + \frac{dr}{dt} \times s  \]
+
+\TheSolution
+(a)
+\begin{equation}
+    \begin{aligned}
+        r \times (u + v) & = (r_1, r_2, r_3> \times <u_1 + v_1, u_2 + v_2, u_3 + v_3)                                                                           \\
+                         & = (r_2(u_3 + v_3) - r_3(u_2 + v_2), r_1(u_3 + v_3) - r_3(u_1 + v_1), r_2(u_3 + v_3) - r_3(u_2 + v_2))                                \\
+                         & = (r_2 u_3 + r_2 v_3 - r_3 u_2 - r_3 v_2, r_1 u_3 + r_1 v_3 - r_3 u_1 - r_3 v_1, r_2 u_3 + r_2 v_3 - r_3 u_2 - r_3 v_2)              \\
+                         & = ((r_2 u_3 -  r_3 u_2) + (r_2 v_3 - r_3 v_2), (r_1 u_3 - r_3 u_1) + (r_1 v_3 - r_3 v_1), (r_2 u_3 - r_3 u_2) + (r_3 u_2 - r_3 v_2)) \\
+                         & \boxed{ = r \times u + r \times v}
+    \end{aligned}
+\end{equation}
+(b)
+\begin{equation}
+    \begin{aligned}
+        \frac{d}{dt}(r \times s) & = \frac{d}{dt}(r_2 s_3 - r_3 s_2, r_1 s_3 - r_3 s_1, r_1 s_2 - r_2 s_1)                     \\
+                                 & = \begin{pmatrix}
+                                         (r_2 \frac{ds_3}{dt} + \frac{dr_2}{dt} s_3) - (r_3 \frac{ds_2}{dt} + \frac{dr_3}{dt} s_2) \\
+                                         (r_1 \frac{ds_3}{dt} + \frac{dr_1}{dt} s_3) - (r_3 \frac{ds_1}{dt} + \frac{dr_3}{dt} s_1) \\
+                                         (r_1 \frac{ds_2}{dt} + \frac{dr_1}{dt} s_2) - (r_2 \frac{ds_1}{dt} + \frac{dr_2}{dt} s_1) \\
+                                     \end{pmatrix} \\
+                                 & = \begin{pmatrix}
+                                         (r_2 \frac{ds_3}{dt} - \frac{ds_2}{dt} r_3) + (s_3 \frac{dr_2}{dt} - \frac{dr_3}{dt} s_2) \\
+                                         (r_1 \frac{ds_3}{dt} - \frac{ds_1}{dt} r_3) + (s_3 \frac{dr_1}{dt} - \frac{dr_3}{dt} s_1) \\
+                                         (r_1 \frac{ds_2}{dt} - \frac{ds_1}{dt} r_2) + (s_2 \frac{dr_1}{dt} - \frac{dr_2}{dt} s_1) \\
+                                     \end{pmatrix} \\
+                                 & \boxed{= r \times \frac{ds}{dt} + s \times \frac{dr}{dt}}
+    \end{aligned}
+\end{equation}
+
 
 \end{document}
