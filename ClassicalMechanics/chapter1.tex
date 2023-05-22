@@ -408,4 +408,33 @@ Conservation laws, such as conservation of momentum, often give a surprising amo
     \end{aligned}
 \end{equation}
 
+\Problem
+In section 1.5 we proved that Newton's third law implies the conservation of momentum. Prove the converse, that if the law of conservation of momentum applies to every possible group of particles, then the interparticle forcees must obey the third law.
+
+\TheSolution
+If, the conservation of momentum applies, then:
+\[\sum \vec{p}_{initial} = \sum \vec{p}_{final} \]
+Assuming that there are no external forces acting on the system, we get:
+\begin{equation}
+    \begin{aligned}
+        \vec{0} & = \sum \vec{p}_{final} - \sum \vec{p}_{initial} \\
+                & = \Delta \sum \vec{p}                           \\
+                & = \vec{\dot{p}}_{sys}                           \\
+                & = \vec{F}_{sys}                                 \\
+    \end{aligned}
+\end{equation}
+So the system experiences no internal forces. For the base case of a system with two particles (N = 2), $\vec{F}_{sys} = \vec{F}_{12} + \vec{F}_{21} = 0$, which means that $\vec{F}_{12} = -\vec{F}_{21}$, proof of Newton's Third Law.
+
+\Problem Prove that in the absence of external forces, the total angular momentum (defined as $L = \sum_{\alpha} r_\alpha \times p_\alpha$) of an N-particle system is conserved.
+
+\TheSolution
+We are trying to prove that $\vec{L}_sys = \vec{0}$ about a fixed point. Using $\vec{L} = \vec{p} \times \vec{r}$ and differentiating, we get the following:
+\begin{equation}
+    \begin{aligned}
+        \vec{L}_{sys}             & = \sum_i \vec{p}_i \times \vec{r}_i                                                      \\
+                                  & = \sum_i (m_i \vec{v}_i) \times \vec{r}_i                                                \\
+        \frac{d\vec{L}_{sys}}{dt} & = \sum_i \frac{d}{dt}(m_i \vec{v}_i) \times \vec{r}_i + (m_i \vec{v}_i \times \dot{r}_i) \\
+    \end{aligned}
+\end{equation}
+Since $m_i \vec{v}_i \times \dot{r}_i = 0$ because $\vec{v}_i$ is collinear with $\dot{r}_i$ and $\vec{f}_i \times r_i = -\vec{f}_j \times r_j$. From this, we get that the angular momentum of the system is only based on the moment exerted by external objects.
 \end{document}
