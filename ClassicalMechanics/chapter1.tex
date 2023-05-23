@@ -437,4 +437,120 @@ We are trying to prove that $\vec{L}_sys = \vec{0}$ about a fixed point. Using $
     \end{aligned}
 \end{equation}
 Since $m_i \vec{v}_i \times \dot{r}_i = 0$ because $\vec{v}_i$ is collinear with $\dot{r}_i$ and $\vec{f}_i \times r_i = -\vec{f}_j \times r_j$. From this, we get that the angular momentum of the system is only based on the moment exerted by external objects.
+
+\Problem
+A golf ball is hit from ground level with speed $v_0$ in a direction that is due east and at an angle $\theta$ above the horizontal. Neglecting air resistance, use Newton's second law (1.35) to find the position as a function of time, using coordinates with x measured east, y north, and z vertically up. Find the time for the golf ball to return to the ground and how far it travels in that time.
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        v_{y0} & = v_o \sin(\theta)                            \\
+        v_{yf} & = 0 = v_o \sin(\theta) + gt                   \\
+        t      & = \frac{v_o \sin(\theta)}{g} \text{ To Apex}  \\
+        t      & = {\frac{2v_o \sin(\theta)}{g} \text{ Total}}
+    \end{aligned}
+\end{equation}
+
+\Problem
+A student kicks a frictionless puck with initial speed $v_o$, so that it slides straight up a plane that is inclined at an angle $\theta$ above the horizontal. (a) Write down Newton's second law for the puck and solve to give its position as a function of time. (b) How long will the puck take to return to its starting point?
+
+\TheSolution
+(a)
+\begin{equation}
+    \begin{aligned}
+        v_x & = v_o \cos(\theta)      \\
+        v_y & = v_o \sin(\theta) - gt
+    \end{aligned}
+\end{equation}
+
+(b)
+\[ \boxed{\frac{2v_o \sin(\theta)}{g}} \]
+
+\Problem
+A ball is thrown with initial speed $v_o$ up an inclined plane. The plane is inclined at an angle $\phi$ above the horizontal, and the ball's initial velocity is at an angle $\theta$ above the plane. Choose axes with x measured up the slope, y normal to the slope, and z across it. Write down Newton's second law using these axes and find the ball's position as a function of time. Show that the ball lands a distance $r = 2v_o^2 \sin(\theta)\cos(\theta + \phi) / (g \cos^2(\phi))$ from its launch point. Show that for given $v_o$ and $\phi$, the maximum possible range up the inclined plane is $R_{max} = v_o^2 / [g(1 + sin(\phi))]$
+
+\TheSolution
+\begin{equation}
+    \begin{aligned}
+        F       & = m \ddot{r}                        \\
+        \dot{r} & =  \int \ddot{r} = \ddot{r} t + v_0 \\
+    \end{aligned}
+\end{equation}
+\[\pmb{\vec{F}} \implies \begin{cases}
+        ma_x, \\
+        ma_y, \\
+        ma_z  \\
+    \end{cases}\]
+\begin{equation}
+    \pmb{\vec{F}} \implies \begin{cases}
+        -mg\sin(\phi), \\
+        -mg\cos(\phi), \\
+        \vec{0}        \\
+    \end{cases}
+    \pmb{\vec{a}} \implies \begin{cases}
+        -g\sin(\phi), \\
+        -g\cos(\phi), \\
+        \vec{0}       \\
+    \end{cases}
+\end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        \dot{v}_x & = v_o \cos(\theta) - g\sin(\phi)t \\
+        \dot{v}_y & = v_o \sin(\theta) - g\cos(\phi)t \\
+        \dot{v}_z & =  0                              \\
+    \end{aligned}
+    \implies
+    \begin{aligned}
+        x & = v_o \cos(\theta)t - \frac{1}{2}g\sin(\phi)t^2 \\
+        y & = v_o \sin(\theta)t - \frac{1}{2}g\cos(\phi)t^2 \\
+        z & =  0                                            \\
+    \end{aligned}
+\end{equation}
+The reason for why the velocity componenets use $\theta$ is that the initial velocity is $\textit{agnostic}$ to the actual configuration of the inclined plane. That is, the initial velocity components are literally just the vector components relative to the horizontal. However, there is a deceleration as the ball approaches the surface, which we treat as relative to the angle of the surface $\phi$ so that we have a height relative to the inclined plane.
+
+When $y = 0$, the ball is on the inclined surface, which is angled at $\phi$ radians.
+
+\begin{equation}
+    \begin{aligned}
+        y = v_0 \sin(\theta)t - \frac{1}{2}g\cos(\phi)t^2 \\
+        v_0 \sin(\theta)t = \frac{1}{2}g\cos(\phi)t^2     \\
+        2v_0 \sin(\theta) = g\cos(\phi)t                  \\
+        \boxed{t = \frac{2v_o \sin(\theta)}{g\cos(\phi)}}
+    \end{aligned}
+\end{equation}
+
+The distance the ball lands:
+\begin{equation}
+    \begin{aligned}
+        x(t)  & = v_0 \cos(\theta)t - \frac{1}{2} g \sin(\phi)t^2                                                                                \\
+        x(t') & = v_0 \cos(\theta)( \frac{2v_o \sin(\theta)}{g\cos(\phi)}) - \frac{1}{2} g \sin(\phi)( \frac{2v_o \sin(\theta)}{g\cos(\phi)})^2  \\
+        x(t') & = ( \frac{2v_o \sin(\theta)}{g\cos(\phi)})( v_0 \cos(\theta) - \frac{1}{2} g \sin(\phi)( \frac{2v_o \sin(\theta)}{g\cos(\phi)})) \\
+        x(t') & = ( \frac{2v_o^2 \sin(\theta)}{g\cos(\phi)})( \frac{g \cos(\theta) \cos(\phi) - g \sin(\theta) \sin(\phi)} {g\cos(\phi)})        \\
+        x(t') & = R =  \boxed{  \frac{2v_o^2 \sin(\theta)\cos(\theta + \phi)}{g\cos^2(\phi)}}
+    \end{aligned}
+\end{equation}
+Achieve the maximum range ($R_{max} = v_o^2 / [g(1 + sin(\phi))]$):
+\begin{equation}
+    \begin{aligned}
+        \frac{dR}{d\theta} & =   \frac{2v_o^2 (\cos(\theta)\cos(\theta + \phi) - \sin(\theta)\sin(\theta + \phi))}{g\cos^2(\phi)} = 0 \\
+        0                  & =   2v_o^2 (\cos(\theta)\cos(\theta + \phi) - \sin(\theta)\sin(\theta + \phi))                           \\
+        0                  & =   \cos(\theta)\cos(\theta + \phi) - \sin(\theta)\sin(\theta + \phi)                                    \\
+        0                  & = \cos(2\theta + \phi)                                                                                   \\
+        2\theta + \phi     & = \frac{\pi}{2} + C\pi                                                                                   \\
+        \theta             & = \frac{\pi}{4} - \frac{\phi}{2}
+    \end{aligned}
+\end{equation}
+
+Integrating with respect to $\phi$, we get:
+\begin{equation}
+    \begin{aligned}
+        \frac{dR}{d\phi} & = \frac{-2v_o^2\sin(\theta)\sin(\theta + \phi)(g\cos^2(\phi)) - 2v_o^2\sin(\theta)\cos(\theta + \phi)(-2g\cos(\phi)\sin(\phi))}{(g\cos^2(\phi))^2} \\
+        0                & = -2v_o^2\sin(\theta)\sin(\theta + \phi)(g\cos^2(\phi)) - 2v_o^2\sin(\theta)\cos(\theta + \phi)(-2g\cos(\phi)\sin(\phi))                           \\
+        0                & = \sin(\theta + \phi)\cos(\phi) + 2\cos(\theta + \phi)\sin(\phi)                                                                                   \\
+        0                & = \sin(\theta + \phi)\cos(\phi) + 2\cos(\theta + \phi)\sin(\phi)                                                                                   \\
+        0                & = \sin(\frac{\pi}{4} + \frac{\phi}{2})\cos(\phi) + 2\cos(\frac{\pi}{4} + \frac{\phi}{2})\sin(\phi)                                                 \\
+    \end{aligned}
+\end{equation}
+
 \end{document}

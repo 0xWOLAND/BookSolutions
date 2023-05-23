@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1684761936 "/home/chndr1/BookSolutions/ClassicalMechanics/chapter1.tex" "chapter1.pdf" "chapter1" 1684761937
+["pdflatex"] 1684776166 "/home/chndr1/BookSolutions/ClassicalMechanics/chapter1.tex" "chapter1.pdf" "chapter1" 1684776166
   "/etc/texmf/web2c/texmf.cnf" 1684374111 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/chndr1/BookSolutions/ClassicalMechanics/chapter1.tex" 1684761936 22994 a9ce35181a174234c947e7b80172080a ""
+  "/home/chndr1/BookSolutions/ClassicalMechanics/chapter1.tex" 1684776165 29558 c48ebdc1828343a9aba6f3c29097d6a7 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -70,8 +70,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1684374386 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1684374407 2800079 8badd0f000dd66ec7ab2d13646a18005 ""
-  "chapter1.aux" 1684761937 2406 a540e1334d9b8eb2c6b6e2619b680062 "pdflatex"
-  "chapter1.tex" 1684761936 22994 a9ce35181a174234c947e7b80172080a ""
+  "chapter1.aux" 1684776166 2703 f8b9b88d949cdef2a93d0e8cf3dc2053 "pdflatex"
+  "chapter1.tex" 1684776165 29558 c48ebdc1828343a9aba6f3c29097d6a7 ""
   (generated)
   "chapter1.aux"
   "chapter1.log"
